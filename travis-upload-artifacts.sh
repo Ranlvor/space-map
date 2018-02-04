@@ -1,3 +1,9 @@
+#!/bin/sh
+if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
+  echo "TRAVIS_SECURE_ENV_VARS not available. Aborting artifact upload."
+  exit
+fi
+
 #unpack autorisation information
 cat > netrc.gpg <<EOF
 -----BEGIN PGP MESSAGE-----
