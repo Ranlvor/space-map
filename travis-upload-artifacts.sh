@@ -140,6 +140,7 @@ Sg5PRnJnu/8L0Q==
 EOF
 
 echo $DEPLOY_ENCRYPTION_KEY | gpg -q --passphrase-fd 0 key.gpg
+chmod og-rwx key #because it can not be used if it's world readable
 
 #unpack host key pin
 mkdir -p ~/.ssh
