@@ -143,7 +143,10 @@ echo $DEPLOY_ENCRYPTION_KEY | gpg -q --passphrase-fd 0 key.gpg
 
 #unpack host key pin
 mkdir -p ~/.ssh
-echo '|1|nf1ntmCxiWNvAeIv5V26cuWDG7g=|yVvXXaIOjjlQDyugCw94kvzGKXE= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEZRL1Fwe8ez8PAuU8lSPPCv7YG3Iu+3Nu3+M9foZpmve6IkkXLy/L36jLEoqjIbpLB7Ti1UvKiujzHnX14Plhc=' >> ~/.ssh/known_hosts
+cat >> ~/.ssh/known_hosts <<EOF
+|1|77rB9GV68KMf3QaDwxH2YiO9z4I=|yxXMIIX3291zemNIDz3ChVOv/yA= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEZRL1Fwe8ez8PAuU8lSPPCv7YG3Iu+3Nu3+M9foZpmve6IkkXLy/L36jLEoqjIbpLB7Ti1UvKiujzHnX14Plhc=
+|1|F6RqwHRXPPTzrDIXBxRA58+gois=|z0cmY0/qpO5CpCQKOUmrjeuUozg= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEZRL1Fwe8ez8PAuU8lSPPCv7YG3Iu+3Nu3+M9foZpmve6IkkXLy/L36jLEoqjIbpLB7Ti1UvKiujzHnX14Plhc=
+EOF
 chmod og-rwx ~/.ssh ~/.ssh/known_hosts
 
 #upload artifacts
